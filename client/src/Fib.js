@@ -47,7 +47,7 @@ class Fib extends Component {
         for (let key in this.state.values) {
             entries.push(
                 <div key={key}>
-                    For index {key} I calculated {this.state.values[key]}
+                    For index <strong>{key}</strong>, I calculated: <strong>{this.state.values[key]}</strong>
                 </div>
             );
         }
@@ -60,14 +60,14 @@ class Fib extends Component {
             <div>
               <h1>Fibonacci Calculator</h1>
                 <form onSubmit={this.handleSubmit}>
-                    <label>Enter your index (0 - 50): </label>
+                    <label>Enter your index (0 - 1000000): </label>
                     <input
                         value={this.state.index}
                         onChange={(event) => {
-                            if (event.target.value >= 0 && event.target.value <= 50) {
+                            if (event.target.value >= 0 && event.target.value <= 1000000) {
                                 this.setState({ index: event.target.value });
                             } else {
-                                alert('Enter a value between 1 and 50.');
+                                alert('Enter a value between 1 and 1000000.');
                             }
                         }}
                     />
